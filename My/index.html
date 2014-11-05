@@ -3,21 +3,17 @@
 <meta charset="utf-8">
 <meta name="keywords" content="话费套餐, 手机话费, 推荐套餐" />
 <title>话费套餐 免费推荐</title>
-<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="jquery.js"> </script>
 <!--css-->
 <style type="text/css">
 body 
 {
 font-family:"宋体";
 }
-/*#tips{
-float:right;
-margin:0 15px;  这个15px就是对于表格左右留出15像素的空间 
-}*/
-</style>
 
-<script>
+</style>
 <!--这里是判断输入的号码是否正确（非空且11位）-->
+<script>
 function validnumber(field,alerttxt)
 {
 	with (field)
@@ -117,7 +113,7 @@ function Change(obj)
 <p id="time"></p>
 <link type="text/css" rel="stylesheet" href="http://www.webjx.com/images/main.css" media="screen">
 <hr /><hr /><br />
-<div id ="tips">
+<div>
 <p>
 注意 ：
 2G -> 3G -> 4G!!
@@ -131,7 +127,7 @@ function Change(obj)
 	<input name="1" type="radio" onclick="Change('1')"/> 输入号码<br /></li>
 	<div id="1" name="s" style="display:none;float:down" />
     <form action="submitpage.htm" onsubmit="return validateform(this)">
-    <input type="text" name="number" size="11">
+    <input name = "number" type="text"  size="11">
     <input type="submit" value="确定" />
     </form>
     </div>

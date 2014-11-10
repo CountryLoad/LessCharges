@@ -32,44 +32,33 @@
 <p>
 请选择下列一种方式：</p>
 
-<ol><input type="radio" name="shuru" vulue="one"/> 输入号码
-
-  <br />
-  <form>
-    <input type="text">
-    <input type="submit" value="确定" />
-    <br />
-  </form>
-  
-<input type="radio" name="shuru" vulue="two"/> 话费账单粘贴处(短信直接粘贴即可)
-
-  <form>
-    <input type="text">
-    <input type="submit" value="确定" />
-    <br />
-  </form>
-  
-<input type="radio" name="shuru"vulue="three"/> 手动输入
-
+<ol>
+  <form method="POST" action="term1.php">
+      输入号码
+      <br />
+      <input  name="phonenumber" size="11" >
+      <br />
+      话费账单粘贴处(短信直接粘贴即可)
+      </br>
+      <input type="text" >
+      <br />
+    
   <ul class="inside">
-    <form method="POST" action="step7_sort.php">
-     <p>请输入你当前套餐内容(可不填)</p>
-        <input placeholder="流量(M)" name="Data0" >
-        <input placeholder="短信(条)" name="Message0" >
-        <input placeholder="电话(分钟)" name="Call0" >
+    <p>请输入你当前套餐内容(可不填)</p>
+        <input placeholder="流量(M)" name="Data0" size="4" maxlength="6">
+        <input placeholder="短信(条)" name="Message0" size="4" maxlength="6">
+        <input placeholder="电话(分钟)" name="Call0" size="4" maxlength="6">
      </br>
      <p>请输入你需要的套餐(估计值)</p>
-        <input placeholder="流量(M)" name="Data1" >
-        <input placeholder="短信(条)" name="Message1" >
-        <input placeholder="电话(分钟)`" name="Call1" >
+        <input placeholder="流量(M)" name="Data1"  size="4" maxlength="6" >
+        <input placeholder="短信(条)" name="Message1"  size="4" maxlength="6" >
+        <input placeholder="电话(分钟)`" name="Call1"  size="4" maxlength="6" >
         <!--input type="submit" value="SUBMIT"-->
     </br>
         <input type="submit" value="查询" >
-   </form>
   </ul>  
-</ol>
 </form>
-
+</ol>
    
 <br />
 <p>价格区间/月</p>

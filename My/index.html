@@ -3,13 +3,21 @@
 <meta charset="utf-8">
 <meta name="keywords" content="话费套餐, 手机话费, 推荐套餐" />
 <title>话费套餐 免费推荐</title>
-<script type="text/javascript" src="jquery.js"> </script>
+<script type="text/javascript" src="jquery.js"></script>
 <!--css-->
 <style type="text/css">
-body 
+a:link {color:black;}
+a:visited {color:gray;}
+a:hover {text-decoration:none;}
+a:active {color:red;}
+.center
 {
-font-family:"宋体";
+margin:auto;
+width:70%;
 }
+p{font-size:200%;}
+span{font-size:140%;}
+h1::first-letter {font-size:300%;}
 
 </style>
 <!--这里是判断输入的号码是否正确（非空且11位）-->
@@ -108,10 +116,10 @@ function Change(obj)
 </script>
 </head>
 		
-<body onload="startTime()">
+<body background="image/diqiu.jpg" class="center" onload="startTime()" >
 <h1><center><strong>最优套餐 免费推荐</strong></h1>
 <p id="time"></p>
-<link type="text/css" rel="stylesheet" href="http://www.webjx.com/images/main.css" media="screen">
+
 <hr /><hr /><br />
 <div>
 <p>
@@ -124,34 +132,34 @@ function Change(obj)
 <p>请选择下列一种方式：</p>
 
 <ol> 
-	<input name="1" type="radio" onclick="Change('1')"/> 输入号码<br /></li>
+	<input name="1" type="radio" onclick="Change('1')"/><span>输入号码</span><br /></li>
 	<div id="1" name="s" style="display:none;float:down" />
     <form action="submitpage.htm" onsubmit="return validateform(this)">
-    <input name = "number" type="text"  size="11">
+    <input placeholder=" 11位" name = "number" type="text"  size="11">
     <input type="submit" value="确定" />
     </form>
     </div>
 	
-    <input name="1" type="radio" onclick="Change('2')"/> 账单粘贴<br /></li>
+    <input name="1" type="radio" onclick="Change('2')"/><span>账单粘贴</span><br /></li>
 	<div id="2" name="s" style="display:none;float:down" />
     <form action="submitpage.htm" onsubmit="return validate_form(this)">
-    <textarea name="context" rows="10" cols="40"></textarea>
+    <textarea placeholder=" 直接粘贴短信即可" name="context" rows="10" cols="40"></textarea>
     <input type="submit" value="确定" />
     </form>
     </div>
 	
-    <input name="1" type="radio" onclick="Change('3')"/> 手动输入<br /></li>
+    <input name="1" type="radio" onclick="Change('3')"/><span>手动输入</span><br /></li>
 	<div id="3" name="s" style="display:none;float:down" />
     <ul>
-    <li>电话费用（元）</li>
+    <li><span>电话费用（元）</span></li>
     <form>
       <input placeholder=" 电话费用" type="text">
     </form>
-    <li>短信数目（条）</li>
+    <li><span>短信数目（条）</span></li>
     <form>
       <input placeholder=" 短信条数" type="text">
     </form>
-    <li>流量费用（元）</li>
+    <li><span>流量费用（元）</span></li>
 	<form action="submitpage.htm" onsubmit="return validate_form(this)">
         <input placeholder=" 流量费用" type="text" name="context" size="20"><br />
 		<input type="submit" value="确定" /><br/>  
@@ -163,26 +171,20 @@ function Change(obj)
 <div class="fn-t" style="opacity: 1; margin-left: 0px;">
      <img src="image/xl0.png" alt="无法加载">
 </div>
-<div class="tab-bar tbcomm" style="width:736px;">
-                    <a href="javascript:;" data-step="f12">
-                        <span>查询次数</span>
-                    </a>
-                    <a id="camera" href="javascript:;" data-step="f13">
-                        <span>价钱</span>
-                    </a>
-                    <a href="javascript:;" data-step="f14">
-                        <span>优惠项</span>
-                    </a>
-</div><br />
+<div>
+	<input type="submit" value="查询次数" />
+	<input type="submit" value="价钱" />
+	<input type="submit" value="优惠项" />
+</div>
 
 <p>价格区间/月</p>
 <form>
 	<input name="textfield" type="text" size="4" maxlength="6" />-<input name="textfield" type="text" size="4" maxlength="6" />
 </form><br />
 
-<div>评价</div>
+<p>评价</p>
 <form>
-	<textarea  rows="10" cols="85"></textarea>
+	<textarea placeholder="请在此处输入评价" rows="10" cols="85"></textarea>
 	<input type="submit" name="submit" size="60" value="提交" />
 </form>
 <hr /><hr />

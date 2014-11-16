@@ -1,0 +1,28 @@
+/* CSS Document */
+html{ width:100%; margin:0; padding:0;  font-size:12px;  font-family:'Î¢ÈíÑÅºÚ'}
+body{ width:800px; margin-left:auto; margin-right:auto;}
+.content{ width:95%; border:0; margin-left:auto; margin-right:auto;  padding-top:10px; }
+.pic_title{ width:100%; float:left;}
+.title{ float:left;font-size:14px; color:#fea002; font-weight:bold; padding-left:5px; margin-top:10px; }
+.list_content{ width:90%; margin-top:5px; padding-left:43px; float:left; margin-bottom:15px;}
+.list_content ul{ margin:0; padding-left:0px;}
+.list_content li{ list-style-image:url(../images/star.gif); padding-left:3px; }
+.table_content{ float:left; width:100%; margin-top:10px; margin-bottom:15px;}
+.table_content table{ width:95%; border:1px solid #bfbfbf; text-align:center; border-collapse:collapse; margin-left:auto; margin-right:auto;}
+.table_content td{border:1px solid #bfbfbf; height:30px;}
+.orange{ color:#fa6d1b;}
+.qiehuan{ color:#494949; font-size:12px; cursor:pointer;}
+.kong{ width:100%;clear:both; height:30px;}
+.foot_orange{ width:100%; background-color:#ff6b01; height:40px; float:left; color:#FFFFFF; font-family:"ÌŽÍ¥"; text-align:center; line-height:40px;}
+.foot_orange a{color:white;}
+.foot{ width:100%; float:left; color:#808080; font-family:"ÌŽÍ¥"; text-align:center; line-height:40px;}
+ .order_button{
+    background: url("../images/buy.jpg") no-repeat scroll 0 0 transparent;
+    border: medium none;
+    cursor: pointer;
+    display: inline-block;
+    float: left;
+    height: 30px;
+    margin: 10px 10px 0 330px;
+    width: 95px;
+  }

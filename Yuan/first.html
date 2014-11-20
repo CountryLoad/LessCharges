@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8">
+<meta name="keywords" content="话费套餐, 手机话费, 推荐套餐" />
+<title>话费套餐 免费推荐</title>
+<!--css-->
+<style type="text/css">
+
+</style>
+</head>
+
+<body>
+<h1><strong><center>最优套餐 免费推荐</strong></h1>
+
+<link type="text/css" rel="stylesheet" href="http://www.webjx.com/images/main.css" media="screen">
+<hr />
+<p>
+<form>
+  <select name="省份">
+    <option value="黑龙江省" selected="selected">黑龙江省</option>
+    <option value="吉林省">吉林省</option>
+  </select>
+</form>
+
+<input type="radio" name="运营商" vulue="four"/>联通 
+<input type="radio" name="运营商" vulue="five"/> 移动
+<input type="radio" name="运营商" vulue="six"/> 电信
+<hr />
+</p>
+
+<p>
+请选择下列一种方式：</p>
+
+<ol>
+  <form method="POST" action="cal_result.php">
+      输入号码
+      <br />
+      <input  name="phonenumber" size="11" >
+      <br />
+      话费账单粘贴处(短信直接粘贴即可)
+      </br>
+      <input type="text" >
+      <br />
+    
+  <ul class="inside">
+    <p>请输入你当前套餐内容(可不填)</p>
+        <input placeholder="流量(M)" name="Data0" size="4" maxlength="6">
+        <input placeholder="短信(条)" name="Message0" size="4" maxlength="6">
+        <input placeholder="电话(分钟)" name="Call0" size="4" maxlength="6">
+     </br>
+     <p>请输入你需要的套餐(估计值)</p>
+        <input placeholder="流量(M)" name="Data1"  size="4" maxlength="6" >
+        <input placeholder="短信(条)" name="Message1"  size="4" maxlength="6" >
+        <input placeholder="电话(分钟)`" name="Call1"  size="4" maxlength="6" >
+        <!--input type="submit" value="SUBMIT"-->
+    </br>
+        <input type="submit" value="查询" >
+  </ul>  
+</form>
+</ol>
+   
+<br />
+<p>价格区间/月</p>
+<form>
+<input name="textfield" type="text" size="4" maxlength="6" />-<input name="textfield" type="text" size="4" maxlength="6" />
+</form>
+
+<br />
+	<form method="POST" action="feed_insert.php">
+	  <div>
+		<input type="submit" value="提交" />
+	  </div>
+	  <textarea name="content" placeholder="想和我们说:" rows="10" cols="85"/></textarea>
+	</form>
+</body>
+</html>

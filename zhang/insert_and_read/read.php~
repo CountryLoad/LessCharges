@@ -39,7 +39,7 @@
 				$pkg[$i]->over_data = (float)$row[外流量];	
 				$pkg[$i]->over_text = (float)$row[外短信];	
 				$pkg[$i]->extra = (int)$row[额外信息]; 
-				var_dump($pkg[$i]);
+				//var_dump($pkg[$i]);
 				//echo "<br />";
 					$i = $i + 1;
 			}

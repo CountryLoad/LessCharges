@@ -65,7 +65,6 @@
 .'用户'.'</br>';
 	echo '您来自: '.$jsondata['result']['style_citynm'].'</br>';
 	echo '您的卡类型为: '.$jsondata['result']['ctype'].'</br>';
-	echo '';
 ?>
 <div style="text-align: center;">
 	<h2>中国联通-哈尔滨-3G套餐资费表</h2>
@@ -84,7 +83,7 @@
 		<th>本地主叫国内长途(元/分钟)</th>
 		<th>数据流量(元/KB)</th>
 		<th>短信/条</th>
-		<th>总花费</th>
+		<th>FullCharge</th>
 	</tr>
 	</thead>
 	<tbody>

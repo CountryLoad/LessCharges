@@ -31,7 +31,7 @@
 				$pkg[$i]->id = $row['ID'];
 				$pkg[$i]->type1 = $row['Type1'];		
 				$pkg[$i]->type2 = $row['Type2'];		
-				$pkg[$i]->cost =intval($row[资费]);			
+				$pkg[$i]->cost =(int)$row[资费];			
 				$pkg[$i]->pkg_call = (int)$row[内国内语音];	
 				$pkg[$i]->pkg_data = (int)$row[套餐内流量]; 	
 				$pkg[$i]->pkg_text = (int)$row[套餐内短信];
@@ -39,7 +39,7 @@
 				$pkg[$i]->over_data = (float)$row[外流量];	
 				$pkg[$i]->over_text = (float)$row[外短信];	
 				$pkg[$i]->extra = (int)$row[额外信息]; 
-				var_dump($pkg[$i]);
+				//var_dump($pkg[$i]);
 				//echo "<br />";
 					$i = $i + 1;
 			}
@@ -56,14 +56,14 @@
 				$pkg[$i]->id = $row['ID'];
 				$pkg[$i]->type1 = $row['Type1'];		
 				$pkg[$i]->type2 = $row['Type2'];		
-				$pkg[$i]->cost = $row['资费'];			
-				$pkg[$i]->pkg_call = $row['内国内语音'];	
-				$pkg[$i]->pkg_data = $row['套餐内流量']; 	
-				$pkg[$i]->pkg_text = $row['套餐内短信'];
-				$pkg[$i]->over_call = $row['外国内语音'];	
-				$pkg[$i]->over_data = $row['外流量'];	
-				$pkg[$i]->over_text = $row['外短信'];	
-				$pkg[$i]->extra = $row['额外信息']; 
+				$pkg[$i]->cost =(int)$row[资费];			
+				$pkg[$i]->pkg_call = (int)$row[内国内语音];	
+				$pkg[$i]->pkg_data = (int)$row[套餐内流量]; 	
+				$pkg[$i]->pkg_text = (int)$row[套餐内短信];
+				$pkg[$i]->over_call = (float)$row[外国内语音];	
+				$pkg[$i]->over_data = (float)$row[外流量];	
+				$pkg[$i]->over_text = (float)$row[外短信];	
+				$pkg[$i]->extra = (int)$row[额外信息]; 
 				//var_dump($pkg[$i]);
 				//echo "<br />";
 					$i = $i + 1;

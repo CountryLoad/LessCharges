@@ -1,107 +1,214 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-
-<style type="text/css">
-h1 
-{
-border:red solid thin;
-outline-style:dotted;
-outline-color:#00ff00;
-}
-
-div
-{
-float:left;
-width:200px;
-height:250px;
-margin:0 0 15px 20px;
-padding:15px;
-border:1px solid black;
-text-align:center;
-}
-
-img.big 
-{
-height: 555px
-}
-ul.inside 
-{
-list-style-position: inside
-}
-</style>
-
 <meta charset="utf-8">
 <meta name="keywords" content="话费套餐, 手机话费, 推荐套餐" />
 <title>话费套餐 免费推荐</title>
+<link rel="stylesheet" href="css/jquery.bigautocomplete.css" type="text/css" />
+<style type="text/css">
+<!--关于链接-->
+<a:link {color:black;}
+a:visited {color:blue;}
+a:hover {text-decoration:none;}
+a:active {color:red;}
+.center
+{
+margin:auto;
+width:65%;
+}
+p{font-size:120%;}
 
+<!--文本框透明.text,.button{background:url(http://su.bdimg.com/static/superpage/img/spis_031ddf34.png) no-repeat;}-->
+.text{width:200px;height:22px;padding:4px 7px;padding:6px 7px 2px\9;font:16px arial;}
+.button{width:95px;height:32px;padding:0;padding-top:2px\9;border:0;background-position:0 -35px;background-color:#ddd}
+div#left {height:400px;width:400px;float:left;}
+div#right {height:600px;width:400px;float:right;}
+#area {height:200px;width:450px;}
+
+*{ margin:0; padding:0;}
+html{ height:100%;}
+body{ min-height:100%; font-family:arial; position:relative; }
+body.sideMenu{ margin:0; -webkit-transform:none; transform:none; }
+#sideToggle{ display:none; }
+#sideToggle:checked + aside{ right:0; }
+#sideToggle:checked ~ #wrap{ padding-right:220px; }
+body > aside{ position:absolute; top:50; bottom:150; right:-440px;width:200px; background:#f1103a; transition:0.2s ease-out; -webkit-transition:0.2s ease-out; }
+body > aside > h2{ color:#FFF; text-align:left; font-weight:normal; padding:10px; }
+#wrap{ margin-left:20px; padding:10px; transition:0.25s ease-out; -webkit-transition:0.25s ease-out; }
+  #wrap > label{ display:inline-block;}
+    #wrap > label{
+      background:#f1103a;
+      border-radius:50px;
+      color: #FFF;
+      cursor: pointer;
+      display: block;
+      font-family: Courier New;
+      font-size: 25px;
+      font-weight: bold;
+      width: 30px;
+      height: 30px;
+      line-height: 35px;
+      text-align: center;
+    }
+    #wrap > label:hover{ background:#000; }
+</style>
+<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="js/jquery.bigautocomplete.js"></script>
+<!--显示时间-->
+<script>
+function startTime()
+{
+	var today=new Date()
+	var h=today.getHours()
+	var m=today.getMinutes()
+	var s=today.getSeconds()
+	m=checkTime(m)
+	s=checkTime(s)
+	document.getElementById('time').innerHTML=h+":"+m+":"+s
+	t=setTimeout('startTime()',500)
+}
+function checkTime(i)
+{
+	if (i<10) 
+    {i="0" + i}
+    return i
+}
+</script>
+
+<!--自动填充内容-->
+<script type="text/javascript">
+$(function(){
+    $("#tt").bigAutocomplete({//自动补全传入数组数据
+        width:543,
+        data:[  {title:"3G-46-A套餐"},
+				{title:"3G-66-A套餐"},
+				{title:"3G-96-A套餐"},
+				{title:"3G-126-A套餐"},
+				{title:"3G-156-A套餐"},
+				{title:"3G-186-A套餐"},
+				{title:"3G-226-A套餐"},
+				{title:"3G-286-A套餐"},
+				{title:"3G-386-A套餐"},
+				{title:"3G-586-A套餐"},
+				{title:"3G-886-A套餐"}, 							 
+				{title:"3G-46-B套餐"},
+				{title:"3G-66-B套餐"},
+				{title:"3G-96-B套餐"},
+				{title:"3G-126-B套餐"},
+				{title:"3G-156-B套餐"},
+				{title:"3G-186-B套餐"},
+				{title:"3G-46-C套餐"},
+				{title:"3G-66-C套餐"},
+				{title:"3G-96-C套餐"},
+                {title:"4G-76-全国套餐"},
+				{title:"4G-106-全国套餐"},
+				{title:"4G-136-全国套餐"},
+				{title:"4G-166-全国套餐"},
+				{title:"4G-196-全国套餐"},
+				{title:"4G-296-全国套餐"},
+				{title:"4G-396-全国套餐"},
+				{title:"4G-596-全国套餐"},
+				{title:"4G全国组合套餐"},
+				{title:"4G本地组合套餐"}],
+         
+    });
+})
+</script>
+<script>
+$(function(){
+    $("#tb").bigAutocomplete({//自动补全传入数组数据
+        width:543,
+        data:[  {title:"101：实时话费"},
+				{title:"102：账户余额"},
+				{title:"103：上月账单"},
+				{title:"104：历史账单"},
+				{title:"105：积分查询"},
+				{title:"106：积分消费记录"},
+				{title:"107：手机上网流量"},
+				{title:"108：积分产生记录"},
+				{title:"109：欠费查询"},
+				{title:"201：信用额度"},
+				{title:"202：缴费记录查询"}, 							 
+				{title:"203：业务受理记录查询"},
+				{title:"204：用户信息"},
+				{title:"205：帐户信息"},
+				{title:"206：SP代收费"},
+				{title:"207：查询PUK码"},
+				{title:"208：套餐查询"},
+				{title:"2081：套餐产品查询"},
+				{title:"2082：套餐余量查询"}],    
+    });
+});
+</script>
 </head>
-<body>
+		
+<body class="center" onload="startTime()" >
+<h1><center><strong>最优套餐 免费推荐</strong></h1>
+<p id="time"></p>
+<hr /><hr />
 
-<h1><strong><center>最优套餐 免费推荐</strong></h1>
-<p>
-<form>
-  <select name="省份">
-    <option value="黑龙江省" selected="selected">黑龙江省</option>
-    <option value="吉林省">吉林省</option>
-  </select>
-</form>
-<input type="radio" name="运营商" vulue="four"/>联通 
-<input type="radio" name="运营商" vulue="five"/> 移动
-<input type="radio" name="运营商" vulue="six"/> 电信
-<hr />
-</p>
+<input type='checkbox' id='sideToggle'>
+<aside><h2>
+回复编码，办理套餐业务：<br />
+<ul>
+ <li>1：话费及积分</li>       
+ <li>2：账户查询</li>
+ <li>3：充值</li>
+ <li>4：客户服务</li>
+ <li>5：业务受理</li>
+ <li>6：增值业务</li>
+ <li>7：省份专区</li>
+ <li>8：热点促销</li>
+</ul>
+</h2></aside>
+
 <div>
-<img src="/images/eg_mouse.jpg" /><br />
+<p>
+注意 ：2G -> 3G -> 4G!!<br />
+套餐更换，顺序不会再倒序更换的。
+</p>
+</div>
+<div id="left">
+<p>请填写内容：</p>
+    <form action="term2.php" method="post" name="searchform" id="searchform" class="searchinfo" autocomplete="off">
+    <span>输入号码</span><br /> 
+	<input placeholder="11位" type="text" name="phonenumber" class="text"size="25"/><br />   
+	
+	<span>套餐名称</span><br />
+	<input placeholder="套餐名称" type="text" name="pkg_info" id="tt" value="" class="text" autocomplete="off"/><br />   
+	
+    <span>账单粘贴</span><br />
+    <textarea placeholder="直接粘贴短信即可" name="bill" rows="10" cols="40"></textarea><br />
+		
+    <span>输入理想套餐构成</span><br />
+    <ul>
+    	<li><span>电话时长（分钟）</span></li>
+        <input placeholder="电话时长" name="call" class="text" type="text"><br />
+        <li><span>短信数目（条）</span></li>
+        <input placeholder=" 短信条数/月" name="message" class="text" type="text"><br />
+        <li><span>流量（M）</span></li>
+		<input placeholder=" 流量M" name="data" class="text" type="text">	  	 	 
+    </ul>  
+    <input type="submit" value="确定" class="button"/>
+    <br/>
+</form>
+</div>
+<div id="right">
 
+<p>尊敬的用户，请输入编码办理业务(详情点击"帮"按钮)</p>
+<input placeholder="业务编码" id ="tb" name="pkg_info" class="text" type="text">
+<input type="submit" value="确定" class="button"/><br />
+<div id='wrap' >
+     <label id='sideMenuControl' for='sideToggle'>帮</label>
+</div>
+<p>温馨提示【回复7775，流量从此放心用！超多免费流量领取，猛戳 <a href="http://www.js165.com/jsredbag/red.html?path=dxt">u.10010.cn/hb</a>】</p>
+<br /><hr /><hr /><br />
+<p>评价</p>
+<form action="feed_insert.php">
+	<textarea id="area" placeholder="请在此处输入评价" rows="10" cols="85"></textarea>
+	<input type="submit" name="submit" class="button" value="提交" />
+</form>
 </div>
 
-<p> 
-请选择下列一种方式：</p>
-<ol><input type="radio" name="shuru" vulue="one"/> 输入号码
-
-  <br />
-  <form>
-    <input type="text">
-    <br />
-  </form>
-  
-<input type="radio" name="shuru" vulue="two"/> 话费账单粘贴处（短信直接粘贴即可）
-
-  <form>
-    <input type="text">
-    <br />
-  </form>
-  
-<input type="radio" name="shuru"vulue="three"/> 手动输入
-
-  <ul class="inside">
-    <li>电话费用（元）</li>
-    <form>
-      <input type="text">
-      <br />
-     </form>
-    <li>短信费用（）</li>
-    <form>
-      <input type="text">
-      <br />
-     </form>
-    <li>流量费用</li>
-    <form>
-      <input type="text">
-      <input type="submit" value="确定" />
-      <br />
-     </form>
-    </ul>  
-</ol>
-<hr />
-
-</form>
- <form>
-      <input type="submit" value="查询次数" />
-       <input type="submit" value="价钱" />
-        <input type="submit" value="优惠项" />
-      <br />
-     </form>
-<p>价格区间/月</p>
-<form>
+</body>
+</html>

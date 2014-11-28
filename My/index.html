@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -210,5 +211,198 @@ $(function(){
 </form>
 </div>
 
+=======
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta charset="utf-8">
+<meta name="keywords" content="话费套餐, 手机话费, 推荐套餐" />
+<title>话费套餐 免费推荐</title>
+<script type="text/javascript" src="jquery.js"></script>
+<!--css-->
+<style type="text/css">
+body 
+{
+font-family:"宋体";
+}
+/*#tips{
+float:right;
+margin:0 15px;  这个15px就是对于表格左右留出15像素的空间 
+}*/
+</style>
+
+<script>
+<!--这里是判断输入的号码是否正确（非空且11位）-->
+function validnumber(field,alerttxt)
+{
+	with (field)
+    {
+        if (value==null||value==""||value.length()!=11||isNaN)
+    	{
+			alert(alerttxt);
+			return false;
+		}
+  		else 
+		{return true}
+    }
+}
+
+function validateform(thisform)
+{
+	with (thisform)
+    {
+ 		if (validnumber( number," your input is a error!")==false)
+    	{
+			number.focus();
+			return false;
+		}
+    }
+}
+</script>
+<!--这里是判断其他的输入是否为空-->
+<script>
+function validnull(field,alerttxt)
+{
+	with (field)
+    {
+        if (value==null||value=="")
+    	{
+			alert(alerttxt);
+			return false;
+		}
+  		else 
+		{return true}
+    }
+}
+
+function validate_form(thisform)
+{
+	with (thisform)
+    {
+ 		if (validnull(context," must be filled up!")==false)
+    	{
+			context.focus();
+			return false;
+		}
+    }
+}
+</script>
+<!--显示时间-->
+<script>
+function startTime()
+{
+	var today=new Date()
+	var h=today.getHours()
+	var m=today.getMinutes()
+	var s=today.getSeconds()
+	m=checkTime(m)
+	s=checkTime(s)
+	document.getElementById('time').innerHTML=h+":"+m+":"+s
+	t=setTimeout('startTime()',500)
+}
+function checkTime(i)
+{
+	if (i<10) 
+    {i="0" + i}
+    return i
+}
+</script>
+<!--此部分实现三选一模式-->
+<script>
+function Change(obj)
+{
+   var s = document.getElementsByName("s");
+   for (var i = 0; i < s.length; i++)
+   {
+       if (s[i].id == obj)
+       {
+           document.getElementById(s[i].id).style.display = "block";
+       }
+       else
+	   {
+      	   document.getElementById(s[i].id).style.display = "none";
+       }
+    }     
+}
+</script>
+</head>
+		
+<body onload="startTime()">
+<h1><center><strong>最优套餐 免费推荐</strong></h1>
+<p id="time"></p>
+<link type="text/css" rel="stylesheet" href="http://www.webjx.com/images/main.css" media="screen">
+<hr /><hr /><br />
+<div id ="tips">
+<p>
+注意 ：
+2G -> 3G -> 4G!!
+如果套餐更换，这个顺序是不会变的。
+</p>
+<img src= "image/tip.jpg"  alt= "温馨提示"/>
+</div>
+<p>请选择下列一种方式：</p>
+
+<ol> 
+	<input name="1" type="radio" onclick="Change('1')"/> 输入号码<br /></li>
+	<div id="1" name="s" style="display:none;float:down" />
+    <form action="submitpage.htm" onsubmit="return validateform(this)">
+    <input type="text" name="number" size="11">
+    <input type="submit" value="确定" />
+    </form>
+    </div>
+	
+    <input name="1" type="radio" onclick="Change('2')"/> 账单粘贴<br /></li>
+	<div id="2" name="s" style="display:none;float:down" />
+    <form action="submitpage.htm" onsubmit="return validate_form(this)">
+    <textarea name="context" rows="10" cols="40"></textarea>
+    <input type="submit" value="确定" />
+    </form>
+    </div>
+	
+    <input name="1" type="radio" onclick="Change('3')"/> 手动输入<br /></li>
+	<div id="3" name="s" style="display:none;float:down" />
+    <ul>
+    <li>电话费用（元）</li>
+    <form>
+      <input placeholder=" 电话费用" type="text">
+    </form>
+    <li>短信数目（条）</li>
+    <form>
+      <input placeholder=" 短信条数" type="text">
+    </form>
+    <li>流量费用（元）</li>
+	<form action="submitpage.htm" onsubmit="return validate_form(this)">
+        <input placeholder=" 流量费用" type="text" name="context" size="20"><br />
+		<input type="submit" value="确定" /><br/>  
+	</form>
+	</div>	 
+    </ul>  
+</ol>
+<hr /><hr />
+<div class="fn-t" style="opacity: 1; margin-left: 0px;">
+     <img src="image/xl0.png" alt="无法加载">
+</div>
+<div class="tab-bar tbcomm" style="width:736px;">
+                    <a href="javascript:;" data-step="f12">
+                        <span>查询次数</span>
+                    </a>
+                    <a id="camera" href="javascript:;" data-step="f13">
+                        <span>价钱</span>
+                    </a>
+                    <a href="javascript:;" data-step="f14">
+                        <span>优惠项</span>
+                    </a>
+</div><br />
+
+<p>价格区间/月</p>
+<form>
+	<input name="textfield" type="text" size="4" maxlength="6" />-<input name="textfield" type="text" size="4" maxlength="6" />
+</form><br />
+
+<div>评价</div>
+<form>
+	<textarea  rows="10" cols="85"></textarea>
+	<input type="submit" name="submit" size="60" value="提交" />
+</form>
+<hr /><hr />
 </body>
 </html>

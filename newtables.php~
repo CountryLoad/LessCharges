@@ -28,7 +28,11 @@
 	$query = 'CREATE TABLE 3G套餐 (
 		ID			CHAR(10)		NOT NULL DEFAULT 0,
 		Type1		CHAR(2)			NOT NULL DEFAULT 0,
+<<<<<<< HEAD
 		Type2		CHAR(1)			NOT NULL DEFAULT 0,
+=======
+		Type2		CHAR(2)			NOT NULL DEFAULT 0,
+>>>>>>> 13a92d31672e7ce483a25a5c82e18532118cb1be
 		资费			INT				NOT NULL DEFAULT 0,
 		内国内语音	INT				NOT NULL DEFAULT 0,
 		套餐内流量 	INT				NOT NULL DEFAULT 0,

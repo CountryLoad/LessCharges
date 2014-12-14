@@ -20,17 +20,20 @@ class Pkg {
 		$this->type2 = $type2;
 		$this->cost = $cost;
 		$this->pkg_call = $pkg_call;
+		$this->pkg_lcall = $pkg_call;
 		$this->pkg_data = $pkg_data;
 		$this->pkg_text = $pkg_text;
 		$this->over_call = $over_call;
+		$this->over_lcall = $over_call;
 		$this->over_data = $over_data;
 		$this->over_text = $over_text;
 		$this->extra = $extra;
+		$this->full_cost = $cost ;
 	}
 	public function cal($call, $data, $text) {
 		// $full_cost = 0.0;
 		$this->full_cost = $this->cost + $this->cal_data ( $data ) + $this->cal_call ( $call ) + $this->cal_text ( $text );
-		return $this->full_cost;
+		//return $this->full_cost;
 	}
 	public function cal_data($data) {
 		$cost_data = 0.0;
@@ -81,6 +84,7 @@ class Pkg {
 		echo $this->over_call . '</br>';
 		echo $this->over_data . '</br>';
 		echo $this->over_text . '</br>';
+		echo $this->full_cost.'</br>';
 		echo $this->extra . '</br>';
 	}
 	
@@ -108,6 +112,7 @@ class Pkg {
 	}
 	public function set_cost($c) {
 		$this->cost = $c;
+		$this->full_cost = $c;
 	}
 	public function set_type2($t2) {
 		$this->type2 = $t2;
@@ -119,16 +124,15 @@ class Pkg {
 		$this->id = $i;
 	}
 	
-	// decide whether
 }
 class Composition {
-	public $type;
-	public $price;
-	public $volume;
-	public $over_cost;
-	public $upper;
-	public $lower;
-	public $full_cost;
+	public $type;		//string
+	public $price;		//int
+	public $volume;		//int 
+	public $over_cost;	//float
+	public $upper;		//int
+	public $lower;		//int 
+	public $full_cost;	//float
 	public function __construct($type, $price, $volume, $over_cost) {
 		$this->type = $type;
 		$this->price = $price;
@@ -172,7 +176,7 @@ class Composition {
 		echo $this->full_cost . '</br>';
 	}
 }
-
+/*************************************/
 // $p = new Composition('D', 8, 150, 0.3);
 // $p->display();
 // echo '</br>';

@@ -1,118 +1,176 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="手机推荐套餐" content="width=device-width, initial-scale=1">
-    <meta name="省话惠" content="width=device-width, initial-scale=1">
-    <link rel="icon" href="HIT.ico">
-    <title>套餐推荐</title>
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <script src="js/ie-emulation-modes-warning.js"></script>
-    <link href="css/carousel.css" rel="stylesheet">
-  </head>
-<!-- NAVBAR
-================================================== -->
-  <body>
-    <div class="navbar-wrapper">
-      <div class="container">
+<meta charset="utf-8">
+<meta name="keywords" content="话费套餐, 手机话费, 推荐套餐" />
+<title>话费套餐 免费推荐</title>
+<link rel="stylesheet" href="css/jquery.bigautocomplete.css" type="text/css" />
+<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="js/jquery.bigautocomplete.js"></script>
+<!--显示时间-->
+<script>
+function startTime()
+{
+	var today=new Date()
+	var h=today.getHours()
+	var m=today.getMinutes()
+	var s=today.getSeconds()
+	m=checkTime(m)
+	s=checkTime(s)
+	document.getElementById('time').innerHTML=h+":"+m+":"+s
+	t=setTimeout('startTime()',500)
+}
+function checkTime(i)
+{
+	if (i<10) 
+    {i="0" + i}
+    return i
+}
+</script>
 
-        <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
-          <div class="container">
-            <div class="navbar-header" >           
-			</div>
-            <div id="navbar" class="navbar-collapse collapse">
-              <ul class="nav navbar-nav">
-                <li><a href="#main">主页</a></li>
-                <li><a href="#about">关于我们</a></li>
-                <li><a href="#contact">联系</a></li>
-              </ul>
-            
-			<div id="navbar" class="navbar-collapse collapse">
-                <form class="navbar-form navbar-right" role="form">
-            <div class="form-group">
-                <input type="text" placeholder="邮箱" class="form-control">
-            </div>
-            <div class="form-group">
-                <input type="password" placeholder="密码" class="form-control">
-            </div>
-            <button type="submit" class="btn btn-success">用户登录</button>
-          </form>
-          </div></div>
-        </nav>
-      </div>
-    </div>
-    <!-- Carousel
-    ================================================== -->
-    <div id="myCarousel" class="carousel slide" data-ride="carousel">
-      <!-- Indicators -->
-      <ol class="carousel-indicators">
-        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-        <li data-target="#myCarousel" data-slide-to="1"></li>
-        <li data-target="#myCarousel" data-slide-to="2"></li>
-      </ol>
-      <div class="carousel-inner" role="listbox">
-        <div class="item active">
-          <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="First slide">
-          <div class="container">
-            <div class="carousel-caption">
-			  <p>一触即发</p><br />
-              <p>没有什么能够阻挡它的脚步</p><br/>
-			  <p>为最优代言</p>
-              <p><a class="btn btn-lg btn-primary" href="file:///E:/dreamweaver%20workplace/My/signin.html" role="button">马上注册</a></p>
-            </div>
-          </div>
-        </div>
-        <div class="item">
-          <img src="data:image/gif;base64,R0lGODlhAQABAIAAAGZmZgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Second slide">
-          <div class="container">
-            <div class="carousel-caption">
-              <h1>最优套餐，免费推荐</h1>
-              <p>“节省”才是硬道理</p>
-              <p><img src="image/woniu.gif" alt="马上加入吧"></p>
-            </div>
-          </div>
-        </div>
-        <div class="item">
-          <img src="data:image/gif;base64,R0lGODlhAQABAIAAAFVVVQAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Third slide">
-          <div class="container">
-            <div class="carousel-caption">
-              <h1>最优套餐，免费推荐</h1>
-              <p>加入我们，不用再等！</p>
-			  <p><img src="image/woniu.gif" alt="马上加入吧"></p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span> 
-	  </a>
-      <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>  
-	  </a>
-	</div>
+<!--自动填充内容-->
+<script type="text/javascript">
+$(function(){
+    $("#tt").bigAutocomplete({//自动补全传入数组数据
+        width:543,
+        data:[  {title:"3G-46-A套餐"},
+				{title:"3G-66-A套餐"},
+				{title:"3G-96-A套餐"},
+				{title:"3G-126-A套餐"},
+				{title:"3G-156-A套餐"},
+				{title:"3G-186-A套餐"},
+				{title:"3G-226-A套餐"},
+				{title:"3G-286-A套餐"},
+				{title:"3G-386-A套餐"},
+				{title:"3G-586-A套餐"},
+				{title:"3G-886-A套餐"}, 							 
+				{title:"3G-46-B套餐"},
+				{title:"3G-66-B套餐"},
+				{title:"3G-96-B套餐"},
+				{title:"3G-126-B套餐"},
+				{title:"3G-156-B套餐"},
+				{title:"3G-186-B套餐"},
+				{title:"3G-46-C套餐"},
+				{title:"3G-66-C套餐"},
+				{title:"3G-96-C套餐"},
+                {title:"4G-76-全国套餐"},
+				{title:"4G-106-全国套餐"},
+				{title:"4G-136-全国套餐"},
+				{title:"4G-166-全国套餐"},
+				{title:"4G-196-全国套餐"},
+				{title:"4G-296-全国套餐"},
+				{title:"4G-396-全国套餐"},
+				{title:"4G-596-全国套餐"},
+				{title:"4G全国组合套餐"},
+				{title:"4G本地组合套餐"}],
+         
+    });
+})
+</script>
+</head>
+		
+<body class="center" onload="startTime()" >
+<h1><center><strong>最优套餐 免费推荐</strong></h1>
+<p id="time"></p>
+<hr /><hr />
+<style type="text/css">
+<!--关于链接<a:link {color:black;}
+<!--a:visited {color:gray;}
+<!--a:hover {text-decoration:none;}
+<!--a:active {color:red;}
+.center
+{
+margin:auto;
+width:70%;
+}
+p{font-size:150%;}
+h1::first-letter {font-size:300%;}
 
-    <div class="container marketing">
-      <div class="row">
-        <div class="col-lg-4">
-          <img src="image/liantong2.jpg" alt="Generic placeholder image" style="width: 140px; height: 140px;"><br /><br />
-          <p><a class="btn btn-default" href="file:///E:/dreamweaver%20workplace/My/caozuojiemian.html" role="button">点击进入&raquo;</a></p>
-        </div>
-        <div class="col-lg-4">
-          <img src="image/yidong.jpg" alt="Generic placeholder image" style="width: 140px; height: 140px;"><br /><br />
-          <p><a class="btn btn-default" href="file:///E:/dreamweaver%20workplace/My/caozuojiemian.html" role="button">点击进入&raquo;</a></p>
-        </div>
-        <div class="col-lg-4">
-          <img src="image/dianxin.jpg" alt="Generic placeholder image" style="width: 140px; height: 140px;"><br /><br />
-          <p><a class="btn btn-default" href="file:///E:/dreamweaver%20workplace/My/caozuojiemian.html" role="button">点击进入&raquo;</a></p>
-        </div>
-      </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/docs.min.js"></script>
-    <script src="js/ie10-viewport-bug-workaround.js"></script>
-  </body>
+*{margin:0;padding:0;list-style-type:none;}
+<!--文本框透明.text,.button{background:url(http://su.bdimg.com/static/superpage/img/spis_031ddf34.png) no-repeat;}-->
+.text{width:200px;height:22px;padding:4px 7px;padding:6px 7px 2px\9;font:16px arial;}
+.button{width:95px;height:32px;padding:0;padding-top:2px\9;border:0;background-position:0 -35px;background-color:#ddd}
+div#left {height:650px;width:400px;float:left;}
+div#right {green;height:600px;width:400px;float:right;}
+div#low {#99bbbb;clear:both;text-align:left;}
+#area {height:200px;width:700px;}
+</style>
+<div>
+<p>
+注意 ：2G -> 3G -> 4G!!
+如果套餐更换，这个顺序是不会再倒序更换的。
+</p>
+</div>
+<div id="left">
+<p>请填写内容：</p>
+    <form action="term2.php" method="post" name="searchform" id="searchform" class="searchinfo" autocomplete="off">
+    <span>输入号码</span><br /> 
+	<input placeholder="11位" type="text" name="phonenumber" class="text"size="25"/><br />   
+	
+	<span>套餐名称</span><br />
+	<input placeholder="套餐名称" type="text" name="pkg_info" id="tt" value="" class="text" autocomplete="off"/><br />   
+	
+    <span>账单粘贴</span><br />
+    <textarea placeholder="直接粘贴短信即可" name="bill" rows="10" cols="40"></textarea><br />
+		
+    <span>手动输入</span><br />
+    <ul>
+    	<li><span>电话费用（元）</span></li>
+        <input placeholder="电话费用/月" name="call" class="text" type="text"><br />
+        <li><span>短信数目（条）</span></li>
+        <input placeholder=" 短信条数/月" name="message" class="text" type="text"><br />
+        <li><span>流量费用（元）</span></li>
+		<input placeholder=" 流量费用/月" name="data" class="text" type="text">	  	 	 
+    </ul>  
+    <input type="submit" value="确定" class="button"/>
+    <br/>
+</form>
+</div>
+<div id="right">
+<p>尊敬的用户，请输入编码办理业务</p>
+<input placeholder="业务编码" name="pkg_info" class="text" type="text">
+<input type="submit" value="确定" class="button"/><br />
+<p>
+请回复以下编码，即可办理相应业务：<br />
+<ul>
+ <li>1：话费及积分</li>       
+ <li>2：账户查询</li>
+ <li>3：充值</li>
+ <li>4：客户服务</li>
+ <li>5：业务受理</li>
+ <li>6：增值业务</li>
+ <li>7：省份专区</li>
+ <li>9：热点促销</li>
+ <li>101：实时话费</li>
+ <li>102：账户余额</li>
+ <li>103：上月账单</li>
+ <li>104：历史账单</li>
+ <li>105：积分查询</li>
+ <li>106：积分消费记录</li>
+ <li>107：手机上网流量</li>
+ <li>108：积分产生记录</li>
+ <li>109：欠费查询</li>
+ <li>201：信用额度</li>
+ <li>202：缴费记录查询</li>
+ <li>203：业务受理记录查询</li>
+ <li>204：用户信息</li>
+ <li>205：帐户信息</li>
+ <li>206：SP代收费</li>
+ <li>207：查询PUK码</li>
+ <li>208：套餐查询</li>
+ <li>2081：套餐产品查询</li>
+ <li>2082：套餐余量查询</li>
+ <li>【回复7775，流量从此放心用！超多免费流量领取，猛戳 u.10010.cn/hb 】
+</ul>
+</p>
+</div>
+
+<div id="low">
+<p>评价</p>
+<form>
+	<textarea id="area" placeholder="请在此处输入评价" rows="10" cols="85"></textarea>
+	<input type="submit" name="submit" class="button" value="提交" />
+</form>
+</div>
+<hr /><hr />
+</body>
 </html>

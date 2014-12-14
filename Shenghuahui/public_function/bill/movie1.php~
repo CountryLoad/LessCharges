@@ -1,3 +1,12 @@
+<?php
+session_start();
+
+//check to see if user has logged in with a valid password
+if ($_SESSION['authuser'] !=1 ) {
+    echo "Sorry, but you don't have permission to view this page!";
+    exit();
+}
+?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -28,21 +37,35 @@
 	mysql_select_db('PhoneSet', $db) or die(mysql_error($db));
 
 	// retrieve information
-	$query = 'SELECT * FROM feedback';
+	$query = 'SELECT * FROM phoneset';
 	$result = mysql_query($query, $db) or die(mysql_error($db));
 
 	// determine number of rows in returned result
 	$num_set = mysql_num_rows($result);
 ?>
 <div style="text-align: center;">
-	<h2>Feedback Review</h2>
+	<h2>PhoneSet Review Database</h2>
 	<table border="1" cellpadding="2" cellspacing="2"
 	  style="width: 70%; margin-left: auto; margin-right: auto;">
 	<tr>
-		<td>ID号</th>
-		<td>反馈内容</td>
-		<td>时间</td>
+		<td rowspan="2">ID号</th>
+		<td rowspan="2">套餐名称</td>
+		<td rowspan="2">套餐费用</td>
+	    <td rowspan="2">运营商</td>
+		<td colspan="3">套餐内容含</td>	
+	   	<td colspan="4">套餐外</td>
+	</tr>
+	<tr>
 
+
+
+		<td>本地通话/分钟</td>
+		<td>数据流量/MB</td>
+		<td>短信/条</td>		
+		<td>本地主叫本地通话(元/分钟)</td>
+		<td>本地主叫国内长途(元/分钟)</td>
+		<td>数据流量(元/KB)</td>
+		<td>短信/条</td>
 	</tr>
 <?php
 // loop through the results
@@ -50,8 +73,16 @@ while ($row = mysql_fetch_assoc($result)) {
     extract($row);
     echo '<tr>';
     echo '<td>' . $id . '</td>';
-    echo '<td>' . $content . '</td>';
-	echo '<td>' . $time . '</td>';
+    echo '<td>' . $name . '</td>';
+    echo '<td>' . $operators . '</td>';
+    echo '<td>' . $fee . '</td>';
+    echo '<td>' . $duration . '</td>';
+    echo '<td>' . $flow . '</td>';
+    echo '<td>' . $sms . '</td>';
+    echo '<td>' . $localcall . '</td>';
+    echo '<td>' . $longdiscall . '</td>';
+    echo '<td>' . $flowcharge . '</td>';
+    echo '<td>' . $smscharge . '</td>';
     echo '</tr>';
 }     
 ?>

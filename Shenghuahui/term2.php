@@ -9,7 +9,7 @@
 // http://localhost/info_pages/4g_national.html
 require ('public_function/api_phoneinfo.php');
 require('public_class/class_pkg.php');
-require ('public_function/cu_composition.php');
+require ('public_function/extract_packages/cu_composition.php');
 require ('public_function/func_set_table.php');
 // require('http://localhost/Shenghuahui/public_function/cu_34g.php');
 require ('public_function/cu_34g.php');

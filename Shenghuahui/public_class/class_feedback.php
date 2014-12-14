@@ -1,9 +1,14 @@
 <?php
+/* functions in DB
+ * query_feed_time()
+ * query_phonenumber()
+ */
+
 class Feedback {
-  public $username;
-  public $phonenumber;
-  public $feed_info;
-  public $feed_time;
+  public $username;		//string
+  public $phonenumber;	//string 
+  public $feed_info;	//string
+  public $feed_time;	//string
   
   public function __construct($un, $pn,$fi){
     $this->username = $un;
@@ -14,7 +19,7 @@ class Feedback {
   public function set_username($un){
     $this->username = $un;
   }
-  public function set_phone_number($pn){
+  public function set_phonenumber($pn){
     $this->phonenumber = $pn;
   }
   public function set_feed_info($fi){

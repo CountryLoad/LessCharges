@@ -1,10 +1,11 @@
 <?php
+	function insert_feedback() {
     //connect to MySQL
-	echo 'Trying to connect to PhoneSet!<br>';
-    $mysql_server_name = "localhost"; //数据库服务器名称
-    $mysql_username = "root"; // 连接数据库用户名
-    $mysql_password = "root"; // 连接数据库密码
-    $mysql_database = "PhoneSet"; // 数据库的名字
+	//echo 'Trying to connect to PhoneSet!<br>';
+    $mysql_server_name = "localhost"; 	//数据库服务器名称
+    $mysql_username = "root"; 			// 连接数据库用户名
+    $mysql_password = "root"; 			// 连接数据库密码
+    $mysql_database = "PhoneSet"; 		// 数据库的名字
     
 	$db = mysql_connect($mysql_server_name, $mysql_username,
                         $mysql_password);
@@ -21,9 +22,11 @@
 
 	// insert data into the phoneset
 	$query = 'INSERT INTO feedback
-		    (id, content, date)
+		    (用户名, 号码, 内容, 反馈时间, 反馈内容)
 		VALUES 
-		    (1, "不错哦！", 20141028);';
+		    ('".."', '".."', '".."', '".."', '".."');';
 	mysql_query($query, $db) or die(mysql_error($db));
-	echo 'Data inserted successfully!<br>';
+
+	//echo 'Data inserted successfully!<br>';
+	}
 ?>

@@ -9,7 +9,7 @@
 <body>
 <h3>想和我们说：<br/></h3>
 <form action="insert.php" method="post">
-<input type="text" name="content" />
+<input type="text" name="firstname" />
 
 <input type="submit" />
 </form>

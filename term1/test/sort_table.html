@@ -1,0 +1,78 @@
+<html>
+  <head>
+    <title>
+    </title>
+    <script type="text/javascript" src="/home/sus/web/html/js/jquery-2.1.1.js"></script>
+    <script type="text/javascript" src="/home/sus/web/html/js/jquery.tablesorter.js"></script>
+    <script type="text/javascript" >
+	$(document).ready(function() {
+		$('table').tablesorter({
+			sortList: [[1,0]]
+		});
+		$('table').tablesorter({widgets:['zebra']});
+	});	
+    </script>
+    <style>
+	th { cursor: pointer};
+	tr.even { background-color: #F34;}
+	tr.odd { background-color: #034;}
+    </style>
+   </head>
+  <body>
+    <table  border="1" cellpadding="2" cellspacing="2"
+          style="width: 10%; margin-left: auto; margin-right: auto;">
+      <thead>
+	<tr>
+	  <th>ID</td>
+	  <th>Money</td>
+	</tr>
+      </thead>
+      <tbody>
+	<tr>
+	  <td>1</td>
+	  <td>502</td>
+	</tr>
+	<tr>
+	  <td>2</td>
+	  <td>410</td>
+	</tr>
+	<tr>
+	  <td>3</td>
+	  <td>367</td>
+	</tr>
+	<tr>
+	  <td>4</td>
+	  <td>645</td>
+	</tr>
+	<tr>
+	  <td>5</td>
+	  <td>578</td>
+	</tr>
+	<tr>
+	  <td>6</td>
+	  <td>636</td>
+	</tr>
+	<tr>
+	  <td>7</td>
+	  <td>945</td>
+	</tr>
+	<tr>
+	  <td>8</td>
+	  <td>364</td>
+	</tr>
+	<tr>
+	  <td>9</td>
+	  <td>234</td>
+	</tr>
+	<tr>
+	  <td>10</td>
+	  <td>678</td>
+	</tr>
+	<tr>
+	  <td>11</td>
+	  <td>432</td>
+	</tr>
+     </tbody>
+    </table>
+  </body>
+</html>
